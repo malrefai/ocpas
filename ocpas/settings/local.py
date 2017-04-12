@@ -1,7 +1,7 @@
 import os
 
 gettext = lambda s: s
-DATA_DIR = os.path.dirname(os.path.dirname(__file__))
+DATA_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 """
 Django settings for ocpas project.
 
@@ -17,7 +17,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -64,18 +64,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+MEDIA_ROOT = os.path.join(DATA_DIR, 'data', 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static-serve')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'ocpas', 'static'),
+    os.path.join(DATA_DIR, 'data', 'static'),
 )
 SITE_ID = 1
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'ocpas', 'templates'), ],
+        'DIRS': [os.path.join(DATA_DIR, 'data', 'templates'), ],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
