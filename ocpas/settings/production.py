@@ -26,15 +26,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'dt(8a%tiw8-uimz^tzmqo^@_1u(&#4r@biia3-u@(7rbq=9-r6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
 # Application definition
-
-
-
-
 
 ROOT_URLCONF = 'ocpas.urls'
 
@@ -229,3 +225,11 @@ STATICFILES_FINDERS = (
 )
 
 ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
+
+import dj_database_url
+
+DATABASES['default'] = dj_database_url.config()
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
