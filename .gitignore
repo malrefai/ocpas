@@ -5,10 +5,9 @@
 !.elasticbeanstalk/*.global.yml
 
 *.pyc
-db.sqlite3
 #Procfile
 #runtime.txt
 myvenv
 __pycache__
-settings/local.py
-.DS_Store
+#.settings/local.py
+DS_Store
