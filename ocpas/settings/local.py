@@ -1,7 +1,7 @@
 import os
 
 gettext = lambda s: s
-DATA_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
 Django settings for ocpas project.
 
@@ -60,18 +60,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(DATA_DIR, 'data', 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static-serve')
+MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+# storage static file
 STATICFILES_DIRS = (
-    os.path.join(DATA_DIR, 'data', 'static'),
+    os.path.join(DATA_DIR, 'static'),
 )
 SITE_ID = 1
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'data', 'templates'), ],
+        'DIRS': [os.path.join(DATA_DIR, 'templates'), ],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',

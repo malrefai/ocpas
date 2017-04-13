@@ -28,4 +28,4 @@ if settings.DEBUG:
     urlpatterns = [
         url(r'^media/(?P<path>.*)$', serve,
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-        ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + staticfiles_urlpatterns() + urlpatterns
+        ] + staticfiles_urlpatterns() + urlpatterns
